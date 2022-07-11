@@ -4,15 +4,18 @@ import express from 'express'
 import mongoose from 'mongoose'
 import Post from "./Post.js"
 import router from './router.js';
-require('dotenv').config()
-const cors = require('cors')
+// require('dotenv').config()
+import cors from 'cors'
+import dotenv from 'dotenv';
+dotenv.config();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const DB_URL = `mongodb+srv://dbUser:eGr2l0Ud3jwga1Po@cluster0.bpgphhr.mongodb.net/?retryWrites=true&w=majority`
 
 const app = express();
 
 app.use(cors())
+// server-posts-men
 
 
 app.use(express.json())
@@ -37,3 +40,34 @@ async function startApp() {
 }
 
 startApp()
+
+// "type": "module",
+
+// {
+//     "name": "server",
+//     "version": "1.0.0",
+//     "main": "index.js",
+//     "type": "module",
+//     "scripts": {
+//       "dev": "nodemon index.js",
+//       "test": "echo \"Error: no test specified\" && exit 1",
+//       "start": "node index.js"
+//     },
+//     "keywords": [],
+//     "author": "",
+//     "license": "ISC",
+//     "dependencies": {
+//       "cors": "^2.8.5",
+//       "dotenv": "^16.0.1",
+//       "express": "^4.18.1",
+//       "heroku": "^7.60.2",
+//       "mongoose": "^6.4.4",
+//       "nodemon": "^2.0.19"
+//     },
+//     "description": "",
+//     "engines": {
+//       "npm": "8.10.0",
+//       "node": "16.15.0"
+//     }
+//   }
+  
